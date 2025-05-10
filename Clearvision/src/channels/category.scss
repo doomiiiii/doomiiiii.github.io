@@ -1,0 +1,86 @@
+/* CHANNEL CATEGORY */
+%categoryContainer {
+  padding-top: 16px;
+}
+%categoryWrapper {
+  padding-left: 10px;
+  padding-right: 0;
+  transition: all 0.3s ease-in-out;
+}
+%categoryIcon {
+  display: none;
+}
+%categoryName {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $main-color;
+  font-weight: 700;
+  transition: all 0.3s ease-in-out;
+  opacity: 0.7;
+  &:before {
+    content: '';
+    height: 2px;
+    flex-grow: 1;
+    transition: all 0.3s ease-in-out;
+    background: linear-gradient(to left, $main-color 50%, transparent);
+    margin-right: 5px;
+  }
+  &:after {
+    content: '';
+    height: 2px;
+    flex-grow: 1;
+    transition: all 0.3s ease-in-out;
+    background: linear-gradient(to right, $main-color 50%, transparent);
+    margin-left: 5px;
+  }  
+}
+
+// COLLAPSED
+%categoryWrapperCollapsed {
+  %categoryName {
+    &:before,
+    &:after {
+      flex-grow: 0;
+    }
+  }
+}
+
+// HOVER
+%categoryWrapper:hover %categoryName {
+  color: $main-color;
+}
+%categoryMain:hover %categoryName {
+  opacity: 1;
+}
+
+// MUTED
+%categoryWrapper%categoryWrapperMuted {
+  opacity: 0.5;
+  %categoryName {
+    color: $main-color;
+  }
+  &:hover %categoryName {
+    color: $hover-color;
+  }
+}
+
+// ADD CHANNEL ICON
+%categoryButtons {
+  margin-left: 3px;
+}
+%categoryAddIcon {
+  color: $main-color;
+  opacity: 0.7;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    color: $main-color;
+    opacity: 1;
+  }
+}
+
+// New Channel
+%categoryNewChannel,
+%categoryNewChannelIcon {
+  color: var(--url-color);
+}

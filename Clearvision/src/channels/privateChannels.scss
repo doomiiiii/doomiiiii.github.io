@@ -1,0 +1,159 @@
+/* PRIVATE CHANNELS */
+%privateChannels {
+  background: transparent;
+  %privateChannelsScroller {
+    background: transparent;
+  }
+}
+
+// HEADER
+%privateChannelsHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $main-color;
+  font-weight: 700;
+  text-align: center;
+  &:hover {
+    color: $main-color;
+  }
+  &:before {
+    content: '';
+    height: 2px;
+    flex-grow: 1;
+    transition: all 0.3s ease-in-out;
+    background: linear-gradient(to left, $main-color 50%, transparent);
+    margin-right: 5px;
+  }
+  &:after {
+    content: '';
+    height: 2px;
+    flex-grow: 1;
+    transition: all 0.3s ease-in-out;
+    background: linear-gradient(to right, $main-color 50%, transparent);
+    margin-left: 5px;
+  }
+  %privateChannelsHeaderText {
+    overflow: visible;
+  }
+  %privateChannelsInviteButton {
+    color: $main-color;
+    transition: all 0.1s ease-in-out;
+    &:hover {
+      color: $hover-color;
+    }
+  }
+}
+
+// PRIVATE CHANNEL
+%privateChannel {
+  max-width: none;
+}
+%privateChannelInteractive {
+  position: relative;  
+  color: var(--channel-color);
+  z-index: 1;
+  &:before {
+    content: '';
+    position: absolute;
+    @include stretch;
+    border-radius: 3px;
+    transition: all 0.15s ease-in-out;
+    z-index: -1;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    @include pos(0, 100%, 0, 0);
+    border-radius: 3px;
+    opacity: 0.9;
+    transition: all 0.3s ease-in-out;
+    z-index: -1;
+  }
+}
+%privateChannelIcon,
+%privateChannelName {
+  font-size: 14px;
+  transition: all 0.15s ease-in-out;
+  overflow: hidden;
+}
+%privateChannelActivityText {
+  color: var(--channel-color) !important;
+  transition: all 0.15s ease-in-out;
+  strong {
+    color: $main-color;
+    font-weight: 700;
+    transition: all 0.15s ease-in-out;
+  }
+}
+%privateChannelInteractive {
+  // HOVER
+  &:hover {
+    color: var(--channel-hovered);
+    background: transparent;
+    &:before {
+      background: hsla(0, 0%, 100%, 0.1);
+    }
+    %privateChannelActivityText {
+      color: var(--channel-hovered) !important;
+    }
+  }
+
+  // SELECTED
+  &%privateChannelInteractiveSelected {
+    background: transparent;
+    color: var(--channel-selected);
+    &:before {
+      background: hsla(0, 0%, 100%, 0.1);
+    }
+    &:after {
+      right: 0;
+      background: $main-color;
+      animation: cv-channel-select 0.3s ease-in-out;
+    }
+    %privateChannelActivityEmoji,
+    %privateChannelActivityIcon {
+      filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.7));
+    }
+    %privateChannelActivityText {
+      color: var(--channel-selected) !important;
+      strong {
+        color: #fff;
+      }
+    }
+  }
+
+  // HIGHLIGHT
+  %privateChannelHighlighted {
+    %privateChannelName {
+      color: #fff;
+    }
+  }
+}
+
+// CLOSE BUTTON
+%privateChannelCloseButton {
+  color: var(--channel-color);
+  opacity: 1;
+  &:hover {
+    color: var(--channel-hovered);
+  }
+}
+
+// Activities popout
+%privateChannelActivityContainer {
+  background: var(--background-overlay);
+}
+
+// EMPTY PRIVATE CHANNEL
+%privateChannelsEmpty {
+  fill: hsla(0, 0%, 100%, 0.15);
+}
+
+// PRIVATE CHANNELS SEARCH BAR
+%privateChannelsSearchBar {
+  %privateChannelsSearchBarComponent {
+    background: hsla(0, 0%, 100%, 0.1);
+    color: hsla(0, 0%, 100%, 0.3);
+  }
+}
