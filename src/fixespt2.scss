@@ -1,0 +1,32 @@
+// Security keys list https://discord.com/channels/212324635356692500/858733936800956427/1270769660039663636
+.credentialList__6c75d {
+  background-color: rgba(0, 0, 0, calc($bg-shading * 0.4));
+  border-radius: 4px;
+}
+.name__91a9d {
+  color: $text-normal;
+}
+.button__201d5.lookBlank__201d5.colorTransparent__201d5 {
+  color: $text-normal;
+}
+.credentialItem__6c75d.container__91a9d {
+  border-radius: 0px;
+}
+.credentialItem__6c75d.container__91a9d:first-of-type {
+  border: none;
+}
+
+// notice
+#app-mount::before {
+  content: "v6 is discontinued, please download v7 from the clearvision discord, github or bd website";
+  text-align: center;
+  position: absolute;
+  color: #fff;
+  white-space: pre-wrap;
+  box-sizing: border-box;
+  padding: 10px;
+  background-color: #000;
+  display: block;
+  z-index: 9999;
+  align-self: center;
+}

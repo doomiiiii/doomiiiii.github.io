@@ -1,0 +1,24 @@
+/* SERVER BOOST */
+%serverBoost {
+  background-color: transparent;
+}
+%serverBoostNewBadge {
+  color: #fff
+}
+%serverBoostHeaderWave {
+  color: rgba(0, 0, 0, 0.6);
+}
+%serverBoostBottomWave {
+  display: none;
+}
+%serverBoostTopPerks,
+%serverBoostPerks,
+%serverBoostFAQ {
+  background-color: cv('bg.general.card');
+}
+%serverBoostFooterInner {
+  background-color: cv('bg.general.popout');
+}
+%serverBoostFooterGuildIcon {
+  background-color: transparent;
+}

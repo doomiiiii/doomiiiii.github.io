@@ -1,0 +1,152 @@
+// CUSTOMIZE CHANNELS
+%customizeChannelsHeader {
+  background-color: rgba(0, 0, 0, calc($bg-shading * 0.6)) !important;
+}
+%customizeChannels {
+  background-color: rgba(0, 0, 0, calc($bg-shading * 0.5)) !important;
+}
+%customizeChannelsTabBar {
+  border-bottom: none;
+}
+%customizeChannelsCard {
+  background: cv('bg.general.card');
+}
+%customizeChannelsPill {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid $main-color;
+}
+%customizeChannelsOption {
+  border: 2px solid $main-color;
+  &:hover {
+    border: 2px solid $hover-color;
+  }
+  &%customizeChannelsSelected {
+    border: 2px solid var(--success-color);
+    background: rgba(0, 0, 0, 0.2);
+  }
+}
+/*profile card*/
+%customizeChannelsProfile {
+  background: cv('bg.general.card');
+}
+%customizeChannelsProfileRole {
+  background: hsla(0, 0%, 100%, 0.1);
+}
+
+// BROWSE CHANNELS
+%browseChannels {
+  background-color: transparent;
+}
+%browseChannelsTip {
+  background-color: cv('bg.general.card');
+}
+%browseChannelsSelectAll {
+  %textExtraSmallMedium {
+    color: hsla(0, 0%, 100%, 0.5) !important;
+    transition: all 0.15s ease-in-out;
+  }
+}
+%browseChannelsRow {
+  background-color: rgba(0, 0, 0, calc($bg-shading * 0.4));
+  &:hover {
+    &:not(%browseChannelsDisabled) {
+      background-color: rgba(0, 0, 0, calc($bg-shading * 0.6));
+    }
+  }
+}
+
+// MEMBERS LIST
+%membersChannelContainer {
+  background: cv('bg.general.card');
+  box-shadow: none;
+}
+%membersChannelNotice {
+  background-color: $main-color;
+  &:hover {
+    background-color: $hover-color;
+  }
+}
+%membersChannelButton {
+  background: $main-color;
+  color: #fff;
+  &:hover {
+    background: $hover-color;
+  }
+}
+%membersChannelOtherRoles {
+  background: hsla(0, 0%, 100%, 0.1);
+}
+
+// NOT IN CHANNEL LIST
+%channelNotInList {
+  background: transparent;
+}
+/* SERVER GUIDE */
+%homeContainer {
+  /*First msg*/
+  %serverGuideMessage {
+    background: transparent;
+  }
+  %serverGuideMessageInner,
+  %serverGuideAvatar,
+  %serverGuideAction,
+  %serverGuideSidebarCard,
+  %serverGuideRow {
+    background: rgba(0, 0, 0, calc($bg-shading * 0.4));
+  }
+  %serverGuideAction:hover {
+    background: $hover-color;
+  }
+  %serverGuideIcon {
+    background: $main-color;
+    border: 4px solid transparent;
+  }
+  %guildFolderIcon {
+    position: relative;
+    background-clip: padding-box;
+    background-color: none;
+    background-position: center center;
+    background-size: 100%100%;
+  }
+  %serverGuideChannelIcon,
+  %serverGuideRulesIcon {
+    background: $main-color;
+    & > svg > path {
+      fill: #fff;
+    }
+  }
+  %serverGuideActionCompleted > path {
+    fill: var(--success-color);
+  }
+}
+/*Cases where we get taken to channels*/
+%serverGuideChannelHintBanner {
+  background: rgba(0, 0, 0, calc($bg-shading * 0.4));
+}
+%serverGuideChannelHintIcon {
+  background: $main-color;
+}
+
+/* SERVER SUBSCRIPTIONS */
+%serverSubscription {
+  background: cv('bg.general.card');
+}
+%serverSubscriptionTier {
+  background: cv('bg.general.card');
+}
+%serverSubscriptionPerk,
+%serverSubscriptionPreview {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* CUSTOMIZE YOUR EXPERIENCE */
+%serverExperienceNav {
+  background: cv('bg.general.card');
+}
+%serverExperiencePrompt,
+%serverExperienceTerms {
+  background: cv('bg.general.card');
+}
+%serverExperienceGradient {
+  display: none;
+}
